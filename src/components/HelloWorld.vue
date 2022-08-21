@@ -15,13 +15,11 @@
     <hr />
     <h3>url路径开头为~的使用</h3>
     <!-- url路径开头为~的使用 -->
+    <img src="~./img/28.jpg" alt="" />
+    <hr />
+    <h3>批量引入</h3>
     <div class="show-pic">
-      <!-- <img
-        v-for="(picPath, index) in imgList"
-        :key="index"
-        :src="'~' + picPath"
-        alt=""
-      /> -->
+      <img v-for="(pic, index) in imgList" :key="index" :src="pic" alt="" />
     </div>
     <hr />
     <!-- css当中的引入 -->
@@ -40,7 +38,11 @@ export default {
   },
   data() {
     return {
-      imgList: ["./img/46.jpg", "./img/47.jpg", "./img/48.jpg"],
+      imgList: [
+        require("./img/46.jpg"),
+        require("./img/47.jpg"),
+        require("./img/48.jpg"),
+      ],
     };
   },
 };
@@ -49,8 +51,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .show-bg {
-  /* background-image: url("https://www.dreamlove.top/img/favicon.png"); */
-  background-image: url("./img/28.jpg");
+  /* 使用相对路径引入图片在css中 */
+  /* background-image: url("../assets/26.jpg"); */
+  /* 使用绝对路径引入图片在css中 */
+  background-image: url("~@/assets/26.jpg");
 }
 img {
   display: block;
