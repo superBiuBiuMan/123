@@ -48,7 +48,7 @@ h('img', { attrs: { src: require('./image.png') }})
 
 引入的就是`src/components/img/28.jpg`,参照于HelloWord.vue所在的路径,也就是以`src/components`为起始点,去寻找`img`目录下的`28.jpg`文件
 
-![](https://dreamos.oss-cn-beijing.aliyuncs.com/gitblog/202208211536272.png)
+![](README.assets/202208211536272.png)
 
 ### 绝对路径的引用
 
@@ -60,7 +60,7 @@ h('img', { attrs: { src: require('./image.png') }})
 
 * 依旧会根据图片的大小来决定是否转化为base64编码图片
 
-![](https://dreamos.oss-cn-beijing.aliyuncs.com/gitblog/202208211554186.png)
+![](README.assets/202208211554186.png)
 
 #### 绝对路径下的URL转换规则
 
@@ -95,7 +95,7 @@ h('img', { attrs: { src: require('./image.png') }})
   * `src="/resource/img/pic1.png"`和`src="resource/img/pic1.png"`
   * 引入的都是`public/img/pic1.png`文件
 
-![](https://dreamos.oss-cn-beijing.aliyuncs.com/gitblog/202208211556235.png)
+![](README.assets/202208211556235.png)
 
 ### 含有'@'路径URL的转换规则
 
@@ -118,7 +118,7 @@ h('img', { attrs: { src: require('./image.png') }})
 * 上面代码的示例当中
   * `src = "./img/28.jpg"`和`src="@/components/img/28.jpg"`都是指向`src/components/img/28.jpg`的图片文件
 
-![](https://dreamos.oss-cn-beijing.aliyuncs.com/gitblog/202208211543452.png)
+![](README.assets/202208211543452.png)
 
 * 并且图片也都可以这样子引入
   * `<img :src="require('@/assets/46.jpg')" alt="">`
@@ -155,7 +155,7 @@ css里面,如果使用**相对路径**去引入图片,那没有什么区别,都�
 </style>
 ```
 
-![报错信息](https://dreamos.oss-cn-beijing.aliyuncs.com/gitblog/202208211718962.png)
+![报错信息](README.assets/202208211718962.png)
 
 所以需要添加下`~`就可以
 
